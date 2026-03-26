@@ -1,6 +1,9 @@
 package com.example.desafiodispositivosmoveis.view
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -13,12 +16,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val usuario1 ="Linux"
+        val senha1 = 123
+
+        val usuario : EditText = findViewById(R.id.edt_usuario)
+        val senha: EditText = findViewById(R.id.edt_senha)
+        val botaoLogar: Button = findViewById(R.id.btn_login)
+
+        botaoLogar.setOnClickListener {
+
+            val usuario = usuario.text.toString()
+            val senha = senha.text.toString()
+
+            if (usuario == usuario1 && senha == senha1.toString()){
+                Toast.makeText(this, "Seja Bem Vindo", Toast.LENGTH_SHORT).show()
+
+            }
+            Toast.makeText(this, "Usuario ou senha Invalido", Toast.LENGTH_SHORT).show()
+        }
+
     }
 }
