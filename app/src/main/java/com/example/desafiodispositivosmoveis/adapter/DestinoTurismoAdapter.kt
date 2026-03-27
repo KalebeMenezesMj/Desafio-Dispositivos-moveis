@@ -18,8 +18,9 @@ class DestinoTurismoAdapter(private val destinosTuristicos: List<DestinoTuristic
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        // CORREÇÃO: Aqui deve ir o layout do ITEM (o CardView), não da tela inteira
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.activity_lista_destinos, parent, false)
+            .inflate(R.layout.item_destino, parent, false)
         return ViewHolder(view)
     }
 
