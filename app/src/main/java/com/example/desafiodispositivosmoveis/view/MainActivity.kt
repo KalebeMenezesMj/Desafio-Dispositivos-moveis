@@ -1,5 +1,6 @@
 package com.example.desafiodispositivosmoveis.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.desafiodispositivosmoveis.R
+import kotlin.jvm.java
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,14 +33,24 @@ class MainActivity : AppCompatActivity() {
 
         botaoLogar.setOnClickListener {
 
-            val usuario = usuario.text.toString()
-            val senha = senha.text.toString()
+            val usuarioDigitado = usuario.text.toString()
+            val senhaDigitada = senha.text.toString()
 
-            if (usuario == usuario1 && senha == senha1.toString()){
+            if (usuarioDigitado == usuario1 && senhaDigitada == senha1.toString()){
                 Toast.makeText(this, "Seja Bem Vindo", Toast.LENGTH_SHORT).show()
 
+                // --- COMANDO PARA PASSAR DE TELA ---
+                // Troque 'SegundaActivity' pelo nome da sua classe da 2ª tela
+                val intent = Intent(this, ListaActivity::class.java)
+                startActivity(intent)
+
+                // Finaliza a MainActivity para o usuário não voltar ao login ao apertar 'voltar'
+                finish()
+
+            } else {
+                // Agora o erro só aparece se o login falhar
+                Toast.makeText(this, "Usuário ou senha Inválido", Toast.LENGTH_SHORT).show()
             }
-            Toast.makeText(this, "Usuario ou senha Invalido", Toast.LENGTH_SHORT).show()
         }
 
     }
