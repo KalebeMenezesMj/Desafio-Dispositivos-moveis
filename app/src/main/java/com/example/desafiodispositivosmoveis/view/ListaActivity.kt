@@ -1,6 +1,8 @@
 package com.example.desafiodispositivosmoveis.view
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,10 +11,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiodispositivosmoveis.R
 import com.example.desafiodispositivosmoveis.adapter.DestinoTurismoAdapter
+import com.example.desafiodispositivosmoveis.model.DestinoTuristico
 import com.example.desafiodispositivosmoveis.model.DestinoTuristicoDaoImpl
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class ListaActivity : AppCompatActivity(R.layout.activity_lista) {
+class ListaActivity : AppCompatActivity(R.layout.activity_lista_destinos) {
     private val dao = DestinoTuristicoDaoImpl()
 
 
@@ -25,12 +27,18 @@ class ListaActivity : AppCompatActivity(R.layout.activity_lista) {
             insets
         }
 
+        val btnVoltar = findViewById<Button>(R.id.btn_voltar_cadastro)
+        btnVoltar.setOnClickListener {
+            val intent = Intent(this, CadastroDestinoActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         val rvDestino: RecyclerView = findViewById(R.id.rv_destinos)
         val destinos= dao.getDestinoTuristico()
 
         rvDestino.layoutManager = LinearLayoutManager(this)
-        rvDestino.adapter = DestinoTurismoAdapter(destinos)
+        rvDestino.adapter = DestinoTurismoAdapter(destinos as MutableList<DestinoTuristico>)
 
 
 

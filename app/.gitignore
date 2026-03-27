@@ -1,1 +1,16 @@
-/build
+# Arquivos de configuração da IDE (Android Studio)
+.idea/
+*.iml
+.DS_Store
+
+# Arquivos de compilação (Gerados automaticamente)
+build/
+app/build/
+captures/
+
+# Arquivos locais e segredos
+local.properties
+.gradle/
+
+# Logs e arquivos temporários
+*.log

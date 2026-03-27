@@ -39,16 +39,12 @@ class MainActivity : AppCompatActivity() {
             if (usuarioDigitado == usuario1 && senhaDigitada == senha1.toString()){
                 Toast.makeText(this, "Seja Bem Vindo", Toast.LENGTH_SHORT).show()
 
-                // --- COMANDO PARA PASSAR DE TELA ---
-                // Troque 'SegundaActivity' pelo nome da sua classe da 2ª tela
-                val intent = Intent(this, ListaActivity::class.java)
+                val intent = Intent(this, CadastroDestinoActivity::class.java)
                 startActivity(intent)
 
-                // Finaliza a MainActivity para o usuário não voltar ao login ao apertar 'voltar'
                 finish()
 
             } else {
-                // Agora o erro só aparece se o login falhar
                 Toast.makeText(this, "Usuário ou senha Inválido", Toast.LENGTH_SHORT).show()
             }
         }

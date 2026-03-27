@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    
 
     <application
         android:allowBackup="true"
@@ -15,7 +16,10 @@
         android:theme="@style/Theme.DesafioDispositivosMoveis"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Webview_Activity"
+            android:name=".view.CadastroDestinoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.Webview_Activity"
             android:exported="false" />
         <activity
             android:name=".view.ListaActivity"

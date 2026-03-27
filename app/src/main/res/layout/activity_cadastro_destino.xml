@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastro de Destino"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <EditText
+        android:id="@+id/edt_nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Destino"
+        android:minHeight="48dp"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/edt_pais"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="País/Região"
+        android:minHeight="48dp"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/edt_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="URL de Referência"
+        android:inputType="textUri"
+        android:minHeight="48dp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btn_salvar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/tv_ver_lista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver lista"
+        android:textColor="#007BFF"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:gravity="center" />
+
+</LinearLayout>
